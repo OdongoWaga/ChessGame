@@ -6,14 +6,14 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var vm: GameViewModel = GameViewModel(roster: Roster(whitePlayer: .human, blackPlayer: .AI(Mike())))
+    
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+         GameView(viewModel: vm)
+            
         }
-        .padding()
+        
     }
 }
 
